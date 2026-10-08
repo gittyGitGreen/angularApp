@@ -1,1 +1,9 @@
 /* Add application styles & imports to this file! */
+a {
+    padding: 1rem;
+}
+div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
