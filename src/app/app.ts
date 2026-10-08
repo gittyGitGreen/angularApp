@@ -5,9 +5,8 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  export: [App]
 })
-export class App {
+export class AppComponent {
   heading = 'Personal Life Dashboard';
   userName: string = 'Swati';
   welcomeText = `Hi, welcome ${this.userName}!`;
