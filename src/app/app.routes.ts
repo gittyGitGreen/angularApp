@@ -9,10 +9,7 @@ export const routes: Routes = [
         children : [
         {path: 'dashboard', component: Dashboard},
         {path: 'tasks', component: Tasks},
-        {path: 'expenses', component: Expenses},
-        {
-             path: '', redirectTo: 'dashboard', pathMatch: 'full'
-          }
+        {path: 'expenses', component: Expenses}
         ]
     }
 ]
