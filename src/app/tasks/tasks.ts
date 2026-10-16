@@ -22,8 +22,10 @@ export class Tasks {
  }
   
 
-  updateStatus(newStatus: boolean, index: number) {
-    this.tasks[index].status = newStatus ? 'Complete' : 'Incomplete';
+  updateStatus(event: Event, index: number) {
+    const checkbox = event.target as HTMLInputElement;
+    const checked: boolean = checkbox.checked;
+    this.tasks[index].status = checked ? 'Complete' : 'Incomplete';
     
   }
 }
