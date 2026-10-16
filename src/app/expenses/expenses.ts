@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './expenses.css',
 })
 export class Expenses {
-
+  heading = 'Expenses';
+  userName: string = 'Swati';
+  welcomeText = `Hi, welcome ${this.userName}!`;
 }
