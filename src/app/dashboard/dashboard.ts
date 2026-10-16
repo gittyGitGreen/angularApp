@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-
+  heading = 'Personal Life Dashboard';
+  userName: string = 'Swati';
+  welcomeText = `Hi, welcome ${this.userName}!`;
 }

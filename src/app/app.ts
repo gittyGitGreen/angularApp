@@ -9,7 +9,5 @@ import {RouterLink} from '@angular/router';
   styleUrl: './app.css',
 })
 export class AppComponent {
-  heading = 'Personal Life Dashboard';
-  userName: string = 'Swati';
-  welcomeText = `Hi, welcome ${this.userName}!`;
+ 
 }
