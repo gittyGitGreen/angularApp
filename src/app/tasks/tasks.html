@@ -1,2 +1,22 @@
-<h1>{{heading}}</h1>
-<p>{{welcomeText}}</p>
+<table>
+    <caption>{{heading}}</caption>
+    <thead>
+        <tr>
+           <th></th>
+           <th>Tasks</th> 
+           <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(task of tasks; track task.id) {
+        <tr>
+            <td><input type="checkbox" (change)="updateStatus($event.target.checked, $index)"/></td>
+            <td>{{task.title}}</td>
+            <td>{{task.status}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<div>
+    <h6>Total Task: {{totalTasks}} Completed tasks : {{completedTasks}} Incomplete Tasks: {{incompleteTasks}}</h6>
+</div>
