@@ -10,7 +10,7 @@
     <tbody>
         @for(task of tasks; track task.id) {
         <tr>
-            <td><input type="checkbox" (change)="updateStatus($event.target.checked, $index)"/></td>
+            <td><input type="checkbox" [checked]="task.status === 'Complete' ? true : false" (change)="updateStatus($event.target.checked, $index)"/></td>
             <td>{{task.title}}</td>
             <td>{{task.status}}</td>
         </tr>
@@ -18,5 +18,5 @@
     </tbody>
 </table>
 <div>
-    <h6>Total Task: {{totalTasks}} Completed tasks : {{completedTasks}} Incomplete Tasks: {{incompleteTasks}}</h6>
+    <h6>Total Task: {{tasks.length}} Completed tasks : {{completedTasks}} Incomplete Tasks: {{incompleteTasks}}</h6>
 </div>

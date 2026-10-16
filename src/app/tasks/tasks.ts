@@ -13,14 +13,17 @@ export class Tasks {
     {id: 2, title: 'Build tasks page', status: 'Incomplete'},
     {id: 3, title: 'practise typescript', status: 'Incomplete'}
   ];
-  completedTasks = 1;
-  incompleteTasks = 2;
-  totalTasks = 3;
+ get completedTasks() {
+  return this.tasks.filter(task => task.status === 'Complete').length;
+ }
 
-  updateStatus(newStatus: boolean, index: any) {
+ get incompleteTasks() {
+  return this.tasks.filter(task => task.status !== 'Complete').length;
+ }
+  
+
+  updateStatus(newStatus: boolean, index: number) {
     this.tasks[index].status = newStatus ? 'Complete' : 'Incomplete';
-    this.completedTasks = this.tasks.filter(task => task.status === 'Complete')?.length;
-    this.incompleteTasks = this.tasks.filter(task => task.status !== 'Complete')?.length;
-    this.totalTasks = this.tasks.length;
+    
   }
 }
