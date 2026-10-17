@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-
+type Status = 'Complete' | 'Incomplete';
+interface Task  {
+  id: number, title: string, status: Status
+}
 @Component({
   selector: 'app-tasks',
   imports: [],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })
+
+
 export class Tasks {
   heading = 'My Tasks';
-  tasks = [
+  
+  tasks: Task[] = [
     {id: 1, title: 'Learn Angular routing', status: 'Complete'},
     {id: 2, title: 'Build tasks page', status: 'Incomplete'},
     {id: 3, title: 'practise typescript', status: 'Incomplete'}

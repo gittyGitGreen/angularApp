@@ -10,7 +10,7 @@
     <tbody>
         @for(task of tasks; track task.id) {
         <tr>
-            <td><input type="checkbox" [checked]="task.status === 'Complete' ? true : false" (change)="updateStatus($event, $index)"/></td>
+            <td><input type="checkbox" [checked]="task.status === 'Complete'" (change)="updateStatus($event, $index)"/></td>
             <td>{{task.title}}</td>
             <td>{{task.status}}</td>
         </tr>
