@@ -1,2 +1,28 @@
 <h1>{{heading}}</h1>
-<p>{{welcomeText}}</p>
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(expense of expenses; track $index) {
+            <tr>
+                <td>{{expense.description}}</td>
+                <td>{{expense.amount | currency: 'INR'}}</td>
+                <td>{{expense.category}}</td>
+                <td>{{expense.date | date}}</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
+<p>total Expense: {{totalExpense}}</p>
+<p>Total amount per category:</p>
+@for(expense of totalPerCategory | keyvalue;track expense.key) {
+    <p>{{expense.key}}: {{expense.value}}</p>
+}
