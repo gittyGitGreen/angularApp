@@ -28,7 +28,7 @@ export class Expenses {
 
  get totalPerCategory(): Record<string, number> {
   return this.expenses.reduce((total, item) => {
-    total[item.category] +=item.amount;
+   total[item.category] = ( total[item.category] ?? 0) + item.amount;
     return total;
   }, {} as Record<string,number>);
  }
