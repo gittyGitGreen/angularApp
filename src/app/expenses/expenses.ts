@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CurrencyPipe, DatePipe, KeyValuePipe } from '@angular/common';
 
 interface Expense{
-  description: string, amount: number,category: string, date: Date
+  id: number, description: string, amount: number,category: string, date: Date
 }
 @Component({
   selector: 'app-expenses',
@@ -13,11 +13,11 @@ interface Expense{
 export class Expenses {
   heading = 'My Expenses';
  expenses: Expense[] = [
-  {description: 'Groceries', amount: 1500, category: 'Food', date: new Date()},
-  {description: 'Electricity bill', amount: 1200, category: 'Bills', date: new Date()},
-  {description: 'Baby essentials', amount: 2000, category: 'Baby', date: new Date()},
-  {description: 'Dinner', amount: 800, category: 'Food', date: new Date()},
-  {description: 'Cab ride', amount: 350, category: 'Transport', date: new Date()}
+  {id: 1, description: 'Groceries', amount: 1500, category: 'Food', date: new Date()},
+  {id: 2, description: 'Electricity bill', amount: 1200, category: 'Bills', date: new Date()},
+  {id: 3, description: 'Baby essentials', amount: 2000, category: 'Baby', date: new Date()},
+  {id: 4, description: 'Dinner', amount: 800, category: 'Food', date: new Date()},
+  {id: 5, description: 'Cab ride', amount: 350, category: 'Transport', date: new Date()}
  ]
 
  get totalExpense() {

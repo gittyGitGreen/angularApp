@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        @for(expense of expenses; track $index) {
+        @for(expense of expenses; track expense.id) {
             <tr>
                 <td>{{expense.description}}</td>
                 <td>{{expense.amount | currency: 'INR'}}</td>
@@ -21,8 +21,8 @@
     </tbody>
 </table>
 
-<p>total Expense: {{totalExpense}}</p>
+<p>total Expense: {{totalExpense | currency: 'INR'}}</p>
 <p>Total amount per category:</p>
-@for(expense of totalPerCategory | keyvalue;track expense.key) {
-    <p>{{expense.key}}: {{expense.value}}</p>
+@for(expense of totalPerCategory | keyvalue; track expense.key) {
+    <p>{{expense.key}}: {{expense.value | currency: 'INR'}}</p>
 }
